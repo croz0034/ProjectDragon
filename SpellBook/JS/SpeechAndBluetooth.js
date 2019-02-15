@@ -1,6 +1,7 @@
 let initAll = ()=>{
     speechModule.init();
-    earModule.init()
+    earModule.init();
+    document.getElementById('Back').addEventListener('click', ()=>{history.back()})
 }
 let speechModule = {
     synth: "",

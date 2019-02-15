@@ -4,6 +4,7 @@ let CreditWatch = {
     init: () => {
         let c = CreditWatch;
         c.parkPopulate(document.getElementById("Park"))
+    document.getElementById('Back').addEventListener('click', ()=>{history.back()})
     },
     parkPopulate: (zone) => {
         //The northern empire is kingdom 31
