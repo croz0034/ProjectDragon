@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 2vh;
+}
+body{
+    background: lightblue;
+}
+.Banner > a{
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    font-size: 1rem;
+    padding: 0.5vh;
+    background: white;
+    border: 0.1vh solid black;
+    border-radius: 1vh;
+}
+.Banner{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2;
+    background: white;
+    border-bottom: 0.3vh outset blue;
+    height: 7vh;
+}
+.Banner > button{
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+    font-size: 1.5rem;
+    padding: 0.5vh;
+    background: white;
+    border: 0.1vh solid black;
+    border-radius: 1vh;
+}
+.Banner > button.active {
+    background: lightblue;
+}
+#textOutput{
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 8vh;
+    border: outset blue 0.3vh;
+    background: white;
+    border-radius: 1vh;
+}
+#textOutput > h6 {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    line-height: 1.2
+}
+.hidden{display: none;}
+p{
+    display: inline;
+}
+.Mutable {
+    display: inline;
+}
+h6{
+    font-size: 1rem;
+    font-weight: 100;
+}

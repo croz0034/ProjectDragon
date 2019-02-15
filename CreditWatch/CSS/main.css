@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 2vh;
+}
+body{
+    background: lightblue;
+}
+.Banner{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2;
+    background: white;
+    border-bottom: 0.3vh outset blue;
+    height: 7vh;
+}
+.Banner > button{
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+    font-size: 1.5rem;
+    padding: 0.5vh;
+    background: white;
+    border: 0.1vh solid black;
+    border-radius: 1vh;
+}
+.Banner > a{
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    font-size: 1rem;
+    padding: 0.5vh;
+    background: white;
+    border: 0.1vh solid black;
+    border-radius: 1vh;
+}
+.Banner > select{
+    position: absolute;
+    top: 1vh;
+    left: 15vh;
+    width: 50vw;
+    font-size: 1.5rem;
+    padding: 0.5vh;
+    background: white;
+    border: 0.1vh solid black;
+    border-radius: 1vh;
+    
+}
+
+#ClassFilter{
+    width: 50%;
+    border: 0.1vh solid black;
+    padding-right: 15px;
+}
+#TillNext{
+    border: 1px solid black;
+    width: 20%
+}
+#textOutput{
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 8vh;
+    border: outset blue 0.3vh;
+    background: white;
+    border-radius: 1vh;
+}
