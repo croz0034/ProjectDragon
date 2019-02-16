@@ -13,7 +13,6 @@ let HomeData = {
         window.location.href.includes("#") ? HomeData.TranslateGet() : console.log('nada');
         Navigation.init();
     },
-
     TranslateGet: (ev) => {
         let url = window.location.href;
         url = url.split("#")
@@ -22,15 +21,23 @@ let HomeData = {
             argument = argument.split("=");
             HomeData.user[argument[0]] = argument[1];
         })
-        HomeData.OrkUpload()
+        let data = JSON.parse(localStorage.getItem(HomeData.user.name))
+        let currentDay = new Date;
+        if(data && data.lastSeen <= (currentDay.getDate() + 3)){
+            HomeData.user = data;
+            HomeData.onScreen();
+        } else{
+        HomeData.OrkUpload();
+        }
     },
     OrkUpload: () => {
-        HomeData.LevelRig()
+        HomeData.LevelRig();
         HomeData.AwardRig();
 
     },
     LevelRig: () => {
         jsork.player.getClasses(HomeData.user.ID, (data) => {
+            console.log(data)
             let levels = [[0, 5], [5, 12], [12, 21], [21, 34], [34, 53], [53, 999]];
             data.forEach((job) => {
                 let zone = HomeData.user.Credits;
@@ -45,13 +52,14 @@ let HomeData = {
                 }
             })
 
-            HomeData.DataReturned ? HomeData.onScreen() : HomeData.DataReturned = true;
+            HomeData.DataReturned ? HomeData.fetchDone() : HomeData.DataReturned = true;
         })
 
 
     },
     AwardRig: () => {
         jsork.player.getAwards(HomeData.user.ID, 9999, (data) => {
+            console.log(data);
             data.forEach((Award) => {
                 let zone = HomeData.user.Awards;
                 switch (Award.KingdomAwardName) {
@@ -83,13 +91,19 @@ let HomeData = {
                         zone.Other.push(Award);
                 }
             })
-            HomeData.DataReturned ? HomeData.onScreen() : HomeData.DataReturned = true;
+            HomeData.DataReturned ? HomeData.fetchDone() : HomeData.DataReturned = true;
 
         });
 
     },
+    fetchDone: ()=>{
+        HomeData.user.lastSeen = new Date().getDate()
+        console.log(HomeData.user)
+        localStorage.setItem(HomeData.user.name, JSON.stringify(HomeData.user));
+        console.log(JSON.parse(localStorage.getItem(HomeData.user.name)))
+        HomeData.onScreen();
+    },
     onScreen: () => {
-        console.log(HomeData.user);
         Object.keys(HomeData.user.Credits).forEach((job) => {
             HomeData.xpBarPopulate(job)
         });
