@@ -1,5 +1,4 @@
 let CreditWatch = {
-    parks: "",
     people: [],
     init: () => {
         let c = CreditWatch;
@@ -24,6 +23,7 @@ let CreditWatch = {
                     "ID": Player.MundaneId
                 });
             });
+            console.log(CreditWatch.people)
             CreditWatch.Counter = CreditWatch.people.length;
             for (i = 0; i < CreditWatch.people.length; i++) {
                 CreditWatch.personData(CreditWatch.people[i]);

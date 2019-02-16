@@ -1,0 +1,94 @@
+/*//////////////// General */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.hidden {
+    display: none !important
+}
+.Page{
+    position: relative;
+    top: 10vh;
+    max-height: 90vh;
+}
+nav{
+    position: fixed;
+    border: black solid 0.3vw;
+    height: 10vh;
+    width: 100%;
+}
+nav > button{
+    position: absolute;
+    height: 3vh;
+    bottom: 0;
+    font-size: 2vh;
+    width: 10vh;
+}
+
+/*//////////////// Experience Bar */
+table{
+    width: 100%;
+    border: solid;
+}
+.ClassColour{
+    width: 10%;
+    border: solid;
+}
+.XPbar{
+    width: 90%;
+    border: solid;
+}
+td{
+    position: relative;
+    border: solid black 1px;
+}
+.Zone > .colour {
+    background: brown;
+    height: 9vw;
+}
+.Bar{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    background: lightblue;
+    width: 90%;
+    z-index: 1;
+}
+.Contents{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    line-height: 2.25;
+ text-align: center;
+    font-size: 4vw;
+    z-index: 10;
+}
+.Reeve > .colour {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+/*//////////////// Ladder Awards */
+.Award{
+    text-align: center;
+    font-size: 2vh;
+}
+.LadderBubble{
+    width: 9vw;
+    padding-left: 9vw;
+    overflow: hidden;
+    border: black solid;
+    height: 2vh;
+    display: inline;
+}
+.MiscZone{
+    border: solid;
+    margin: 15px;
+}
+.MiscZone > p {
+    font-size: 2vh;
+}
+h1{
+    font-size: 2.5vh;
+    text-align: center;
+}
