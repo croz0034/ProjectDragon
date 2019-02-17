@@ -11,11 +11,12 @@ let HomeData = {
             },
             Credits: {},
             Paragon: [],
-            NonNobles: []
+            NonNobles: [],
+            Belt: 0
         },
         init: (ev) => {
             window.location.href.includes("#") ? HomeData.TranslateGet() :
-                HomeData.OrkUpload();;
+                console.log('nada');
             Navigation.init();
         },
         TranslateGet: (ev) => {
@@ -173,18 +174,29 @@ let HomeData = {
                 ARCHDUCHESS: 67,
                 GRAND_DUKE: 68,
                 GRAND_DUCHESS: 69
+            };
+            let belt = {
+                "Man-at-Arms": 1,
+                "Page": 0,
+                Squire: 2,
+                0: "Page",
+                1: "Man-at-Arms",
+                2: "Squire"
             }
             let awards = HomeData.user;
             awards.Awards.Other.forEach((item) => {
-                console.log(item)
                     if (NobleTitle[item.KingdomAwardName.toUpperCase()]) {
                         awards.NobleTitle = item.KingdomAwardName;
                     } else if (item.KingdomAwardName.includes("Paragon")) {
                         awards.Paragon.push(item.KingdomAwardName)
-                    } else if (item.CustomAwardName == "Non noble") {
+                    } else if (item.CustomAwardName == "Non noble" || item.Note.includes("Non-Noble")) {
                         awards.NonNobles.push(item.Note);
+                        } else if (belt[item.KingdomAwardName]){
+                            awards.Belt = Math.max(awards.Belt, belt[item.KingdomAwardName])
+                            document.querySelector(".Master").textContent = `${item.GivenBy}'s ${belt[awards.Belt]}`;
                         }
                         else {
+                console.log(item)
                             document.querySelector(".MiscZone").innerHTML += `<p><strong>${item.KingdomAwardName}</strong> ${item.Note}</p>`;
 
                         }
