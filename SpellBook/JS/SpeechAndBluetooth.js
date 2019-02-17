@@ -12,7 +12,6 @@ let speechModule = {
         s.synth = window.speechSynthesis;
     },
     Parrot: (ev) => {
-        console.log(ev.target);
         let WhatToSay;
         if (ev.target) {
             WhatToSay = new SpeechSynthesisUtterance(ev.target.textContent)
@@ -58,13 +57,11 @@ let earModule = {
         drop.textContent = "Listening";
         earModule.recognition.onresult = function (event) {
             let result = event.results[(event.results.length - 1)][0].transcript.toLowerCase();
-            console.log(event.results[(event.results.length - 1)])
-            console.log(result)
 
             for (i = 0; i < abilities.length; i++) {
                 let spell = abilities[i];
                 if (result.includes(spell.name.toLocaleLowerCase())) {
-
+console.log(spell)
                     spell.type = `${spellType[spell.type]}`;
                     spell.school = `${spellSchool[spell.school]}`;
                     spell.incant = `"${spell.incant[0]}" X ${spell.incant[1]}`;
@@ -89,10 +86,8 @@ let earModule = {
     },
     ContentFill: (target, spell) => {
         let targetzone = document.querySelector(`#${target}`)
-        console.log(targetzone.childNodes)
         if (spell[target]) {
             targetzone.classList.remove("hidden")
-            console.log(spell[target])
             if (Array.isArray(spell[target])) {
                 spell[target] = spell[target].join("<br>");
 
