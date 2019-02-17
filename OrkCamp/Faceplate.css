@@ -16,6 +16,7 @@ nav{
     position: fixed;
     border: black solid 0.3vw;
     height: 10vh;
+    background: white;
     width: 100%;
 }
 nav > button{
