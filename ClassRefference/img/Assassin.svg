@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 57 57" style="enable-background:new 0 0 57 57;" xml:space="preserve">
+<style type="text/css">
+	.st0{stroke:#010101;stroke-miterlimit:10;}
+	.st1{stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#5F3916;stroke-width:4;stroke-miterlimit:10;}
+	.st3{stroke:#7D93AA;stroke-width:4;stroke-miterlimit:10;}
+	.st4{fill:#ED2024;stroke:#ED2024;stroke-width:4;stroke-miterlimit:10;}
+</style>
+<title>Assassin</title>
+<path class="st0" d="M46.5,56.5h-36c-5.5,0-10-4.5-10-10v-36c0-5.5,4.5-10,10-10h36c5.5,0,10,4.5,10,10v36
+	C56.5,52,52,56.5,46.5,56.5z"/>
+<path class="st1" d="M14.5,47.5"/>
+<line class="st2" x1="33.1" y1="9.5" x2="28.7" y2="19.4"/>
+<path class="st1" d="M36,20"/>
+<line class="st3" x1="23" y1="31" x2="30" y2="17"/>
+<circle class="st4" cx="26.5" cy="38.5" r="0.5"/>
+<circle class="st4" cx="21.5" cy="46.5" r="0.5"/>
+</svg>
