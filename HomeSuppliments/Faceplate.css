@@ -12,7 +12,7 @@
     top: 10vh;
     max-height: 90vh;
 }
-nav{
+nav.Tabs{
     position: fixed;
     border: black solid 0.3vw;
     height: 10vh;

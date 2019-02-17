@@ -156,6 +156,8 @@ let HomeData = {
         },
         OtherPopulate: (AwardArray) => {
             let NobleTitle = {
+                ESQUIRE: 50,
+                MASTER: 51,
                 LORD: 52,
                 LADY: 53,
                 BARONET: 54,
