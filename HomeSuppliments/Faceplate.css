@@ -18,13 +18,18 @@ nav.Tabs{
     height: 10vh;
     background: white;
     width: 100%;
+    z-index: 20;
 }
 nav > button{
-    position: absolute;
+    position: relative;
     height: 3vh;
     bottom: 0;
     font-size: 2vh;
     width: 10vh;
+}
+#Tips {
+    padding: 15px;
+    font-size: 3vw
 }
 
 /*//////////////// Experience Bar */
