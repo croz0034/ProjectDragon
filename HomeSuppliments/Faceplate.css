@@ -117,7 +117,8 @@ td{
     width: 9vw;
     padding-left: 9vw;
     overflow: hidden;
-    border: black solid;
+    border: black solid 1px;
+    border-right: 0;
     height: 2vh;
     display: inline;
 }
@@ -131,4 +132,18 @@ td{
 h1{
     font-size: 2.5vh;
     text-align: center;
+}
+
+/*//////// Title*/
+#Officers {
+    position: fixed;
+    bottom: 0;
+    width: 90vw;
+    border: inset black 2px;
+    margin-left: 5vw;
+    border-radius: 15px 15px 0 0;
+}
+#Officers > p {
+    font-size: 2vh;
+    margin-left: 2vw;
 }

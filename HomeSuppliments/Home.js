@@ -56,10 +56,10 @@ let HomeData = {
                         HomeData.user.Officers[officer.OfficerRole] = officer.Persona;
                         console.log(HomeData.user.Officers);
 
+                        HomeData.DataReturned++;
                         if (HomeData.DataReturned == 3) { 
                             HomeData.fetchDone()
                         }
-                        HomeData.DataReturned++;
                     })
                 })
             })
@@ -91,10 +91,10 @@ let HomeData = {
                 }
             })
 
+            HomeData.DataReturned ++;
             if (HomeData.DataReturned == 3) { 
                 HomeData.fetchDone()
             }
-            HomeData.DataReturned++;
         })
 
 
@@ -133,10 +133,10 @@ let HomeData = {
                         zone.Other.push(Award);
                 }
             })
+            HomeData.DataReturned++;
             if (HomeData.DataReturned == 3) { 
                 HomeData.fetchDone()
             }
-            HomeData.DataReturned++;
 
         });
 
@@ -144,7 +144,8 @@ let HomeData = {
     fetchDone: () => {
         HomeData.user.lastSeen = new Date().getDate()
         console.log(HomeData.user)
-        localStorage.setItem(HomeData.user.name, JSON.stringify(HomeData.user));
+        setTimeout(()=>{localStorage.setItem(HomeData.user.name, JSON.stringify(HomeData.user));}, 500)
+        
         console.log(JSON.parse(localStorage.getItem(HomeData.user.name)))
         HomeData.onScreen();
     },
