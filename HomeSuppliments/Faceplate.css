@@ -12,6 +12,7 @@
     top: 10vh;
     max-height: 90vh;
 }
+/*/////////////// Navigation Bar */
 nav.Tabs{
     position: fixed;
     border: black solid 0.3vw;
@@ -21,21 +22,31 @@ nav.Tabs{
     z-index: 20;
 }
 nav > button{
-    position: relative;
+    position: absolute;
+    border: 1px solid black;
     height: 3vh;
     bottom: 0;
     font-size: 2vh;
     width: 10vh;
 }
+nav > .active{
+    background: blue;
+    color: white;
+}
 #Tips {
     padding: 15px;
-    font-size: 3vw
+    font-size: 3vw;
+    height: 7.5vh;
+    overflow-y: scroll;
 }
 
 /*//////////////// Experience Bar */
 table{
     width: 100%;
     border: solid;
+}
+th{
+    font-size: 4vw;
 }
 .ClassColour{
     width: 10%;
@@ -50,7 +61,6 @@ td{
     border: solid black 1px;
 }
 .Zone > .colour {
-    background: brown;
     height: 9vw;
 }
 .Bar{
@@ -74,6 +84,30 @@ td{
     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
                 radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
 }
+.Monster > .colour {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #c4c7ce 0%, #9498a1 8%, #74777c 30%, #6f7376 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #9498a1 0%, #c4c7ce 8%, #cdd0d7 25%, #74777c 62.5%, #6f7376 100%);
+}
+.Peasant > .colour {
+    background-image: url(Peasant.jpg);
+    background-size: 100%
+}
+.Paladin > .colour {
+    background-image: url(https://t2.rbxcdn.com/6cbdce76dbbd0558cc77c903d143482d);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    
+}
+.Anti-Paladin > .colour {
+    background-image: url(https://alexnld.com/wp-content/uploads/2015/11/89437e7c-436a-4e25-b50a-5968d85f1fa0.jpg);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    
+}
+
+
+
+
 /*//////////////// Ladder Awards */
 .Award{
     text-align: center;
