@@ -156,6 +156,7 @@ h1{
 }
 .NobleTitle, .UserName, .Paragon, .NonNobles, .Master, .Citizen{
     text-align: center;
+    font-size: 2vh;
     padding: 6px
 }
 .NobleTitle{
