@@ -240,6 +240,7 @@ console.log(order)
             } else if (item.KingdomAwardName.includes("Paragon")) {
                 awards.Paragon.push(item.KingdomAwardName)
             } else if (item.CustomAwardName == "Non noble" || item.Note.includes("Non-Noble")) {
+                item.Note.includes("Non-Noble")? item.Note = item.Note.match(/"([^"]+)"/)[1]: console.log('carry on');
                 awards.NonNobles.push(item.Note);
             } else if (belt[item.KingdomAwardName]) {
                 awards.Belt = Math.max(awards.Belt, belt[item.KingdomAwardName])
