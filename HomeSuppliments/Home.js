@@ -1,5 +1,5 @@
 let HomeData = {
-    DataReturned: 0,
+    DataReturned: {},
     user: {
         name: "Tryel",
         ID: 59484,
@@ -56,8 +56,9 @@ let HomeData = {
                         HomeData.user.Officers[officer.OfficerRole] = officer.Persona;
                         console.log(HomeData.user.Officers);
 
-                        HomeData.DataReturned++;
-                        if (HomeData.DataReturned == 3) { 
+                        HomeData.DataReturned.officers = true;
+                        if (HomeData.DataReturned.Levels && HomeData.DataReturned.Awards) { 
+                    HomeData.DataReturned = {};
                             HomeData.fetchDone()
                         }
                     })
@@ -91,9 +92,10 @@ let HomeData = {
                 }
             })
 
-            HomeData.DataReturned ++;
-            if (HomeData.DataReturned == 3) { 
-                HomeData.fetchDone()
+            HomeData.DataReturned.Levels = true;
+                if (HomeData.DataReturned.officers && HomeData.DataReturned.Awards)  {
+                    HomeData.DataReturned = {};
+                HomeData.fetchDone();
             }
         })
 
@@ -133,8 +135,9 @@ let HomeData = {
                         zone.Other.push(Award);
                 }
             })
-            HomeData.DataReturned++;
-            if (HomeData.DataReturned == 3) { 
+              HomeData.DataReturned.Awards = true;
+                if (HomeData.DataReturned.officers && HomeData.DataReturned.Levels) { 
+                    HomeData.DataReturned = {};
                 HomeData.fetchDone()
             }
 
@@ -144,7 +147,7 @@ let HomeData = {
     fetchDone: () => {
         HomeData.user.lastSeen = new Date().getDate()
         console.log(HomeData.user)
-        setTimeout(()=>{localStorage.setItem(HomeData.user.name, JSON.stringify(HomeData.user));}, 500)
+        localStorage.setItem(HomeData.user.name, JSON.stringify(HomeData.user));
         
         console.log(JSON.parse(localStorage.getItem(HomeData.user.name)))
         HomeData.onScreen();
@@ -194,12 +197,12 @@ let HomeData = {
         } else if (order == "Other") {
             zone = document.querySelector(".MiscZone");
             console.log("Tracer Round")
-
+console.log(order)
             HomeData.OtherPopulate();
         }
 
     },
-    OtherPopulate: (AwardArray) => {
+    OtherPopulate: () => {
         let NobleTitle = {
             ESQUIRE: 50,
             MASTER: 51,
