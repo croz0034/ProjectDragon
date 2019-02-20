@@ -4,6 +4,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    height: 100vh;
+}
 .hidden {
     display: none !important
 }
@@ -16,6 +19,7 @@
 nav.Tabs{
     position: fixed;
     border: black solid 0.3vw;
+    top: 0;
     height: 10vh;
     background: white;
     width: 100%;
@@ -142,9 +146,17 @@ h1{
     border: inset black 2px;
     margin-left: 5vw;
     border-radius: 15px 15px 0 0;
+    border-bottom: 0;
+    padding-bottom: 5px;
 }
 #Officers > p {
     font-size: 2vh;
     margin-left: 2vw;
     padding-top: 5px
+}
+.NobleTitle, .UserName, .Paragon, .NonNobles, .Master{
+    text-align: center;
+}
+.UserName{
+    font-size: 5vh;
 }
