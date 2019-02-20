@@ -49,6 +49,10 @@ let HomeData = {
                 jsork.park.getOfficers(data.ParkId, (data) => {
                     let zone = document.getElementById("Officers")
                     zone.innerHTML = ""
+                    console.log(data);
+                    document.querySelector(".Citizen").textContent = `Citizen of ${data[0].ParkName}`;
+
+                    HomeData.user.Park = data.ParkName
                     data.forEach((officer) => {
                         console.log(officer);
                         zone.innerHTML += `<p><strong>${officer.OfficerRole}:</strong> ${officer.Persona}`
@@ -57,8 +61,8 @@ let HomeData = {
                         console.log(HomeData.user.Officers);
 
                         HomeData.DataReturned.officers = true;
-                        if (HomeData.DataReturned.Levels && HomeData.DataReturned.Awards) { 
-                    HomeData.DataReturned = {};
+                        if (HomeData.DataReturned.Levels && HomeData.DataReturned.Awards) {
+                            HomeData.DataReturned = {};
                             HomeData.fetchDone()
                         }
                     })
@@ -68,6 +72,7 @@ let HomeData = {
             let zone = document.getElementById("Officers")
             zone.innerHTML = ""
             data = HomeData.user.Officers
+            document.querySelector(".Citizen").textContent = `Citizen of ${HomeData.user.Park}`;
             console.log(HomeData.user)
             Object.keys(data).forEach((officer) => {
                 zone.innerHTML += `<p><strong>${officer}:</strong> ${data[officer]}`;
@@ -93,8 +98,8 @@ let HomeData = {
             })
 
             HomeData.DataReturned.Levels = true;
-                if (HomeData.DataReturned.officers && HomeData.DataReturned.Awards)  {
-                    HomeData.DataReturned = {};
+            if (HomeData.DataReturned.officers && HomeData.DataReturned.Awards) {
+                HomeData.DataReturned = {};
                 HomeData.fetchDone();
             }
         })
@@ -135,9 +140,9 @@ let HomeData = {
                         zone.Other.push(Award);
                 }
             })
-              HomeData.DataReturned.Awards = true;
-                if (HomeData.DataReturned.officers && HomeData.DataReturned.Levels) { 
-                    HomeData.DataReturned = {};
+            HomeData.DataReturned.Awards = true;
+            if (HomeData.DataReturned.officers && HomeData.DataReturned.Levels) {
+                HomeData.DataReturned = {};
                 HomeData.fetchDone()
             }
 
@@ -148,7 +153,7 @@ let HomeData = {
         HomeData.user.lastSeen = new Date().getDate()
         console.log(HomeData.user)
         localStorage.setItem(HomeData.user.name, JSON.stringify(HomeData.user));
-        
+
         console.log(JSON.parse(localStorage.getItem(HomeData.user.name)))
         HomeData.onScreen();
     },
@@ -197,7 +202,7 @@ let HomeData = {
         } else if (order == "Other") {
             zone = document.querySelector(".MiscZone");
             console.log("Tracer Round")
-console.log(order)
+            console.log(order)
             HomeData.OtherPopulate();
         }
 
@@ -240,7 +245,7 @@ console.log(order)
             } else if (item.KingdomAwardName.includes("Paragon")) {
                 awards.Paragon.push(item.KingdomAwardName)
             } else if (item.CustomAwardName == "Non noble" || item.Note.includes("Non-Noble")) {
-                item.Note.includes("Non-Noble")? item.Note = item.Note.match(/"([^"]+)"/)[1]: console.log('carry on');
+                item.Note.includes("Non-Noble") ? item.Note = item.Note.match(/"([^"]+)"/)[1] : console.log('carry on');
                 awards.NonNobles.push(item.Note);
             } else if (belt[item.KingdomAwardName]) {
                 awards.Belt = Math.max(awards.Belt, belt[item.KingdomAwardName])

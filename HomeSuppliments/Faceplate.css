@@ -154,7 +154,7 @@ h1{
     margin-left: 2vw;
     padding-top: 5px
 }
-.NobleTitle, .UserName, .Paragon, .NonNobles, .Master{
+.NobleTitle, .UserName, .Paragon, .NonNobles, .Master, .Citizen{
     text-align: center;
     padding: 6px
 }
