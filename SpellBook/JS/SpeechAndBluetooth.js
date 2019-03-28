@@ -62,6 +62,7 @@ let earModule = {
                 let spell = abilities[i];
                 if (result.includes(spell.name.toLocaleLowerCase())) {
 console.log(spell)
+console.log(abilities[i])
                     spell.type = `${spellType[spell.type]}`;
                     spell.school = `${spellSchool[spell.school]}`;
                     spell.incant = `"${spell.incant[0]}" X ${spell.incant[1]}`;
