@@ -24,13 +24,16 @@ let HomeData = {
         let Raw
         if(url[1].includes("&&")){
           Raw = url[1].split("&&");
+          Raw.forEach((argument) => {
+              argument = argument.split("=");
+              HomeData.user[argument[0]] = argument[1];
+          })
         } else {
             Raw = url[1].split("/")
+            HomeData.user.name = Raw[0];
+            HomeData.user.id = Raw[1];
+            console.log(Raw)
         }
-        Raw.forEach((argument) => {
-            argument = argument.split("=");
-            HomeData.user[argument[0]] = argument[1];
-        })
         let data = JSON.parse(localStorage.getItem(HomeData.user.name))
         let currentDay = new Date;
         if (data && data.lastSeen <= (currentDay.getDate() + 3) && !(currentDay.getDate() > data.lastSeen)) {
