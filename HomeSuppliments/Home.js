@@ -21,7 +21,12 @@ let HomeData = {
     TranslateGet: (ev) => {
         let url = window.location.href;
         url = url.split("#")
-        let Raw = url[1].split("&&");
+        let Raw
+        if(url[1].includes("&&")){
+          Raw = url[1].split("&&");
+        } else {
+            Raw = url[1].split("/")
+        }
         Raw.forEach((argument) => {
             argument = argument.split("=");
             HomeData.user[argument[0]] = argument[1];

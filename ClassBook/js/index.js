@@ -18,12 +18,6 @@ const croz0034 = {
             p2.classList.add('page');
             p2.id = 'details-page';
             forcedpage.appendChild(p2);
-
-
-
-
-
-
             croz0034.organizeSpells();
             croz0034.organizeClasses();
             croz0034.pageConstruct();
@@ -496,9 +490,6 @@ const croz0034 = {
                             }
                         }
                     }
-
-
-
 
                 }
         }
